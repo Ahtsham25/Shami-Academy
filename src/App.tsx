@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ActiveView, GradeLevel, NoteDetail } from './types';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -10,6 +10,7 @@ import { PolicyPages } from './components/PolicyPages';
 import { AdminPanel } from './components/AdminPanel';
 import { Footer } from './components/Footer';
 import { BookOpen, Sparkles, FileText, CheckCircle2, ArrowRight } from 'lucide-react';
+import { syncNotesFromStaticJson } from './utils/notesStorage';
 
 export default function App() {
   const [activeView, setActiveView] = useState<ActiveView>('home');
@@ -19,6 +20,10 @@ export default function App() {
   const [readingNote, setReadingNote] = useState<NoteDetail | null>(null);
   const [readerTab, setReaderTab] = useState<'summary' | 'gdrive' | 'questions' | 'formulas' | 'quiz'>('summary');
   const [isBloggerCodeOpen, setIsBloggerCodeOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    syncNotesFromStaticJson();
+  }, []);
 
   const handleOpenReader = (
     note: NoteDetail,
