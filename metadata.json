@@ -1,0 +1,6 @@
+{
+  "name": "Shami Academy - Notes & Pairing Schemes Portal",
+  "description": "Comprehensive academic portal providing Class 9, 10, 11, and 12 Notes, Pairing Schemes, Past Papers, and Blogger WordPress-style themes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
